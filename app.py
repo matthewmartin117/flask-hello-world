@@ -22,7 +22,9 @@ def test():
 @app.route('/db_create')
 def create():
     # connect to postgreSQL db 
-    conn = psycopg2.connect("postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database")
+    conn = psycopg2.connect('''
+    postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database
+    ''')
     # create a basketball table 
     cur.execute('''
         CREATE TABLE IF NOT EXISTS Basketball(
@@ -40,7 +42,9 @@ def create():
 @app.route('/db_insert')
 def inserting():
     # connect to database
-    conn =  psycopg2.connect("postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database")
+    conn =  psycopg2.connect('''
+    postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database
+    ''')
     # create a cursor for the connection
     cur = conn.cursor()
     # execute a statement to insert basketball players into the created table
@@ -63,7 +67,9 @@ def inserting():
 @app.route('/db_select')
 def selecting():
     #create a connection  
-    conn = psycopg2.connect("postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database")
+    conn = psycopg2.connect('''
+    postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database
+    ''')
     # create a cursor from the connection
     cur = conn.cursor()
     # execute a statement that selects the table
@@ -88,7 +94,9 @@ def selecting():
 
 @app.route('/db_drop')
 def dropping():
-    conn = psycopg2.connect("postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database")
+    conn = psycopg2.connect('''
+    postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database
+    ''')
     # create a cursor from the connection
     cur = conn.cursor()
     cur.execute('''

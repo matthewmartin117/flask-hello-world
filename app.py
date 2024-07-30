@@ -25,6 +25,7 @@ def create():
     conn = psycopg2.connect('''
     postgresql://mattmartin_lab10database_user:u7EzgKpgdZosFadNuNAfnVjIz2USZIPZ@dpg-cqj9ctmehbks73c8agkg-a/mattmartin_lab10database
     ''')
+    cur = conn.cursor()
     # create a basketball table 
     cur.execute('''
         CREATE TABLE IF NOT EXISTS Basketball(
